@@ -2,15 +2,26 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 
 const Index = () => {
-  const { data } = useQuery({
+  const { data, isPending, isError, error, fetchStatus, isSuccess } = useQuery({
     queryFn: () =>
       fetch("https://jsonplaceholder.typicode.com/todos").then((response) =>
         response.json()
       ),
     queryKey: "todos",
   });
+  if (isPending) {
+    return <div>loading .....</div>;
+  }
+  if (isError) {
+    <div>{error.message}</div>;
+  }
+
+  // fetchStatus === 'fetching'
+  // fetchStatus === 'paused'
+  // fetchStatus === 'idle'
   return (
     <div className="container mx-auto mt-10">
+      {fetchStatus}
       <div className="flex flex-col ">
         <h1 className="text-2xl font-bold items-center mb-6">Todo List</h1>
         <ul>
