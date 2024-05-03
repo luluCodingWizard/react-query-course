@@ -7,13 +7,13 @@ const Index = () => {
       fetch("https://jsonplaceholder.typicode.com/todos").then((response) =>
         response.json()
       ),
-    queryKey: "todos",
+    queryKey: ["todos"],
   });
   if (isPending) {
     return <div>loading .....</div>;
   }
   if (isError) {
-    <div>{error.message}</div>;
+    return <div>{error.message}</div>;
   }
 
   // fetchStatus === 'fetching'
