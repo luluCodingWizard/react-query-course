@@ -1,10 +1,11 @@
 import "./index.css";
-import TodoListQueries from "./components/TodoListQueries";
+import Posts from "./components/Posts";
+// import TodoListQueries from "./components/TodoListQueries";
 
 function App() {
   return (
     <div className="App">
-      <TodoListQueries />
+      <Posts />
     </div>
   );
 }
