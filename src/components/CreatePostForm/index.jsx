@@ -30,7 +30,7 @@ const Index = () => {
     },
     onError: (error, variables, context) => {
       console.log(`the post with title ${variables.title} Fail to be created`);
-      console.log(error);
+      console.log(error.message);
     },
     onSettled: () => {
       console.log("run last in my mutation calls");

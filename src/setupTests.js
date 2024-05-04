@@ -5,7 +5,10 @@
 import "@testing-library/jest-dom";
 const useQuery = jest.fn();
 const useQueries = jest.fn();
+const useMutation = jest.fn();
+
 module.exports = {
   useQuery,
   useQueries,
+  useMutation,
 };
