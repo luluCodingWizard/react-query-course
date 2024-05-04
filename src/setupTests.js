@@ -4,6 +4,8 @@
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
 const useQuery = jest.fn();
+const useQueries = jest.fn();
 module.exports = {
   useQuery,
+  useQueries,
 };
